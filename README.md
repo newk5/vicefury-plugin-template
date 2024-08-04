@@ -2,7 +2,7 @@
 # vicefury-plugin-template
 
 This is a C++ project that wraps the ViceFury C API. It's meant to be used as a base to add support for 
-new languages or to script gamemodes in C++ instead of using the C API directly. Feel free to clone it and modify it according ot your needs or just take whatever parts you need.
+new languages or to script gamemodes in C++ instead of using the C API directly. Feel free to clone it and modify it according to your needs or just take whatever parts you need.
 
 It has wrapper classes for all game entities that wrap every function from the C API,
 and converts the data types to a more C++ friendly format
