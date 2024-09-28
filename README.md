@@ -2,7 +2,7 @@
 # vicefury-plugin-template
 
 This is a C++ project that wraps the ViceFury C API. It's meant to be used as a base to add support for 
-new languages or to script gamemodes in C++ instead of using the C API directly. Feel free to clone it and modify it according ot your needs or just take whatever parts you need.
+new languages or to script gamemodes in C++ instead of using the C API directly. Feel free to clone it and modify it according to your needs or just take whatever parts you need.
 
 It has wrapper classes for all game entities that wrap every function from the C API,
 and converts the data types to a more C++ friendly format
@@ -15,8 +15,8 @@ This project uses C++20, and has been tested on Visual Studio 2022 (v143) on win
 
 ## Project Structure
 
-The entry point is the [main.cpp PluginInit function](./main.cpp). The server calls this function when it starts, in
-here we create the [Registry](./Registry.h) which is responsible for storing all game entities (Players, Npcs, etc...) and managing their lifetime. You should avoid storing instances of game entities globally and should instead use the registry to fetch them when needed, it already has functions to do this which already do multiple checks to ensure thread safety.
+After compiling this project you should have a .dll/.so file, put this file in the plugins folder on the server root directory and the server will load it and call the the entry point, which is the [main.cpp PluginInit function](./main.cpp). The server calls this function when it starts. In there
+ we create the [Registry](./Registry.h) which is responsible for storing all game entities (Players, Npcs, etc...) and managing their lifetime. You should avoid storing instances of game entities globally and should instead use the registry to fetch them when needed, it already has functions to do this which already do multiple checks to ensure thread safety.
 
 The registry is available everywhere in the code, it's available inside the classes for each game entity and in all event classes. If you're adding support for a new language this is where you'd put your language VM/Interface/Bridge.
 
